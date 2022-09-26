@@ -1,15 +1,25 @@
 import { useEffect } from "react"
+import { Button } from '@mui/material';
+
 export const Hello = () => {
     useEffect(() => {
-        fetch('/api/hello')
-            .then((res) => console.log(res.json))
-            // .then((data) => console.log(data))
-            .catch((e) => console.error(e))
+        alert('viteのリロードがコンポーネントだとされない!')
+        // fetch('/api/hello')
+        //     .then((res) => console.log(res.json))
+        //     // .then((data) => console.log(data))
+        //     .catch((e) => console.error(e))
     }, []);
     return (
-        <div>
-            <h2>Hello components</h2>
-            <button>Thiis is button</button>
+        <div className="container">
+            <div className="row justify-content-center">
+                <div className="col-md-8">
+                    <div className="card">
+                        <div className="card-header">React導入できたわな</div>
+                        <div className="card-body">Im an example component!</div>
+                        <Button color="primary" variant="contained">Hello World</Button>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

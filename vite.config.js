@@ -7,7 +7,11 @@ export default defineConfig({
         react(),
         laravel({
             input: ["resources/css/app.css", "resources/js/app.jsx"],
-            refresh: true,
+            refresh: [
+                'routes/**',
+                'resources/views/**',
+                'resources/js/components/**',//追加
+            ],
         }),
     ],
 });

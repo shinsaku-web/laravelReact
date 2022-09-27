@@ -3,7 +3,6 @@ import { Button } from '@mui/material';
 
 export const Hello = () => {
     useEffect(() => {
-        alert('viteのリロードがコンポーネントだとされない!')
         // fetch('/api/hello')
         //     .then((res) => console.log(res.json))
         //     // .then((data) => console.log(data))
@@ -14,8 +13,8 @@ export const Hello = () => {
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
-                        <div className="card-header">React導入できたわな</div>
-                        <div className="card-body">Im an example component!</div>
+                        <div className="card-header">React導入できたわな!?</div>
+                        <div className="card-body">Im an example component</div>
                         <Button color="primary" variant="contained">Hello World</Button>
                     </div>
                 </div>

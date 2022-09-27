@@ -3,9 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import Container from '@mui/material/Container';
-import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 
 const pages = [{ text: "Home", url: "/" }, { text: "Create", url: "/create" }, { text: "Update", url: "/update" }];
@@ -24,7 +21,6 @@ export const ResponsiveAppBar = () => {
                                         <Typography sx={{ color: '#fff' }}>{page.text}</Typography>
                                     </Link>
                                 </Typography>
-
                             ))}
                         </Box>
                     </Toolbar>

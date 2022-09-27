@@ -1,25 +1,57 @@
-import { useEffect } from "react"
-import { Button } from '@mui/material';
+import React from 'react';
+import { Button, Card } from '@mui/material';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
-export const Home = () => {
-    useEffect(() => {
-        // fetch('/api/hello')
-        //     .then((res) => console.log(res.json))
-        //     // .then((data) => console.log(data))
-        //     .catch((e) => console.error(e))
-    }, []);
+//ヘッダーのコンテンツ用の配列定義
+const headerList = ['名前', 'タスク内容', '編集', '完了'];
+
+export function Home() {
+
     return (
         <div className="container">
             <div className="row justify-content-center">
-                <div className="col-md-8">
+                <div className="col-md-10">
                     <div className="card">
-                        <div className="card-header">Home!?</div>
-                        <div className="card-body">Im an example component</div>
-                        <Button color="primary" variant="contained">Hello World</Button>
-                        <Button color="secondary" variant="contained">Hello World</Button>
+                        <h1>タスク管理</h1>
+                        <Card>
+                            {/* テーブル部分の定義 */}
+                            <TableContainer component={Paper}>
+                                <Table aria-label="simple table">
+                                    {/* ヘッダー部分 */}
+                                    <TableHead>
+                                        <TableRow>
+                                            {headerList.map((item, index) => (
+                                                <TableCell align="center" key={index}>{item}</TableCell>
+                                            ))}
+                                        </TableRow>
+                                    </TableHead>
+                                    {/* ボディ部分 */}
+                                    <TableBody>
+                                        <TableRow>
+                                            <TableCell align="center">モーリー</TableCell>
+                                            <TableCell align="center">肩トレ</TableCell>
+                                            <TableCell align="center"><Button color="secondary" variant="contained">編集</Button></TableCell>
+                                            <TableCell align="center"><Button color="primary" variant="contained">完了</Button></TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell align="center">ドンキーコング</TableCell>
+                                            <TableCell align="center">バナナ補給</TableCell>
+                                            <TableCell align="center"><Button color="secondary" variant="contained">編集</Button></TableCell>
+                                            <TableCell align="center"><Button color="primary" variant="contained">完了</Button></TableCell>
+                                        </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </TableContainer>
+                        </Card>
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }

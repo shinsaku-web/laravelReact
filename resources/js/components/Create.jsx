@@ -12,9 +12,9 @@ export const Create = () => {
     // }, []);
     return (
         <div className="container">
-            <h1>新規登録</h1>
             <div>
                 <Container maxWidth="lg">
+                    <h1 style={{ textAlign: "center" }}>新規登録</h1>
                     <Box sx={{
                         margin: "40px auto",
                         padding: "32px",
@@ -44,6 +44,6 @@ export const Create = () => {
                 </Container>
             </div>
             <MainTable />
-        </div>
+        </div >
     )
 }

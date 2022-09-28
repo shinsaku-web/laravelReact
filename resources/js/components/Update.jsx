@@ -2,12 +2,12 @@ import { useEffect } from "react"
 import { Button } from '@mui/material';
 
 export const Update = () => {
-    useEffect(() => {
-        // fetch('/api/hello')
-        //     .then((res) => console.log(res.json))
-        //     // .then((data) => console.log(data))
-        //     .catch((e) => console.error(e))
-    }, []);
+    // useEffect(() => {
+    //     // fetch('/api/hello')
+    //     //     .then((res) => console.log(res.json))
+    //     //     // .then((data) => console.log(data))
+    //     //     .catch((e) => console.error(e))
+    // }, []);
     return (
         <div className="container">
             <div className="row justify-content-center">

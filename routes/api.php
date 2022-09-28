@@ -19,5 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/hello', function () {
+    // return json_encode(["a" => "hello", "b" => "React", "c" => "Laravel"]);
     return json_encode(["hello", "React", "Laravel"]);
 });

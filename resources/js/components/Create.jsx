@@ -1,15 +1,17 @@
-import { useEffect } from "react"
 import { Box, Button, Container, TextField } from '@mui/material';
 import { MainTable } from './MainTable';
 import { borderRadius } from "@mui/system";
+import React, { useEffect, useState } from 'react';
 
 export const Create = () => {
-    // useEffect(() => {
-    //     fetch('/api/hello')
-    //         .then((res) => res.json())
-    //         .then((data) => console.log(data))
-    //         .catch((e) => console.error(e))
-    // }, []);
+    const [data, setData] = useState(null);
+    useEffect(() => {
+        axios.get("/api/tasks").then((res) => {
+            const data = res.data
+            console.log(data);
+            setData(data);
+        })
+    }, []);
     return (
         <div className="container">
             <div>
@@ -43,7 +45,7 @@ export const Create = () => {
                     </Box>
                 </Container>
             </div>
-            <MainTable />
+            {data ? <MainTable tasks={data} /> : <p>loading...</p>}
         </div >
     )
 }

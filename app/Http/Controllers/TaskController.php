@@ -13,7 +13,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        return json_encode(["index" => "hello index"]);
     }
 
     /**

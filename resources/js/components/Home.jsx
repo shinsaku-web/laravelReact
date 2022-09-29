@@ -4,7 +4,7 @@ import axios from "axios";
 
 export function Home() {
     useEffect(() => {
-        axios.get("/api/hello").then((res) => {
+        axios.get("/api/tasks").then((res) => {
             const data = res.data
             console.log(data);
         })

@@ -11,7 +11,7 @@ import Paper from '@mui/material/Paper';
 //ヘッダーのコンテンツ用の配列定義
 const headerList = ['名前', 'タスク内容', '編集', '完了'];
 
-export function MainTable() {
+export function MainTable({ tasks }) {
     return (
         <Card>
             {/* テーブル部分の定義 */}
@@ -27,18 +27,14 @@ export function MainTable() {
                     </TableHead>
                     {/* ボディ部分 */}
                     <TableBody>
-                        <TableRow>
-                            <TableCell align="center">モーリー</TableCell>
-                            <TableCell align="center">肩トレ</TableCell>
-                            <TableCell align="center"><Button color="secondary" variant="contained">編集</Button></TableCell>
-                            <TableCell align="center"><Button color="primary" variant="contained">完了</Button></TableCell>
-                        </TableRow>
-                        <TableRow>
-                            <TableCell align="center">ドンキーコング</TableCell>
-                            <TableCell align="center">バナナ補給</TableCell>
-                            <TableCell align="center"><Button color="secondary" variant="contained">編集</Button></TableCell>
-                            <TableCell align="center"><Button color="primary" variant="contained">完了</Button></TableCell>
-                        </TableRow>
+                        {tasks.map((task, i) => (
+                            <TableRow key={i}>
+                                <TableCell align="center">{task.name}</TableCell>
+                                <TableCell align="center">{task.content}</TableCell>
+                                <TableCell align="center"><Button color="secondary" variant="contained">編集</Button></TableCell>
+                                <TableCell align="center"><Button color="primary" variant="contained">完了</Button></TableCell>
+                            </TableRow>
+                        ))}
                     </TableBody>
                 </Table>
             </TableContainer>

@@ -20,7 +20,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/create" element={<Create />} />
-                    <Route path="/update" element={<Update />} />
+                    <Route path="/tasks/edit/:id" element={<Update />} />
                     <Route path={`*`} element={<NotFound />} />
                 </Routes>
             </BrowserRouter>

@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 
-const pages = [{ text: "Home", url: "/" }, { text: "Create", url: "/create" }, { text: "Update", url: "/update" }];
+const pages = [{ text: "Home", url: "/" }, { text: "Create", url: "/create" }];
 
 export const ResponsiveAppBar = () => {
     return (

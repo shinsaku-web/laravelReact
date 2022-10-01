@@ -31,7 +31,7 @@ export function MainTable({ tasks }) {
                             <TableRow key={i}>
                                 <TableCell align="center">{task.name}</TableCell>
                                 <TableCell align="center">{task.content}</TableCell>
-                                <TableCell align="center"><Button color="secondary" variant="contained">編集</Button></TableCell>
+                                <TableCell align="center"><Button href={`/tasks/edit/${task.id}`} color="secondary" variant="contained">編集</Button></TableCell>
                                 <TableCell align="center"><Button color="primary" variant="contained">完了</Button></TableCell>
                             </TableRow>
                         ))}

@@ -11,6 +11,18 @@ import Paper from '@mui/material/Paper';
 //ヘッダーのコンテンツ用の配列定義
 const headerList = ['名前', 'タスク内容', '編集', '完了'];
 
+// 完了処理
+const destroy = (id) => {
+    axios.post('/api/tasks/delete', {
+        id: id
+    }).then(res => {
+        console.log(res);
+    }).catch(err => {
+        console.error(err)
+        // alert('エラー')
+    })
+}
+
 export function MainTable({ tasks }) {
     return (
         <Card>
@@ -32,7 +44,7 @@ export function MainTable({ tasks }) {
                                 <TableCell align="center">{task.name}</TableCell>
                                 <TableCell align="center">{task.content}</TableCell>
                                 <TableCell align="center"><Button href={`/tasks/edit/${task.id}`} color="secondary" variant="contained">編集</Button></TableCell>
-                                <TableCell align="center"><Button color="primary" variant="contained">完了</Button></TableCell>
+                                <TableCell align="center"><Button onClick={() => destroy(task.id)} color="primary" variant="contained">完了</Button></TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

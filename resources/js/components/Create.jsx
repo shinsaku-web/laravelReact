@@ -21,9 +21,12 @@ export const Create = () => {
         axios.post('/api/tasks', {
             name: name,
             content: content
-        }).then(res => {
-            setName(null)
-            setContent(null)
+        }).then(() => {
+            // axios.get("/api/tasks").then((res) => {
+            //     const data = res.data
+            //     setData(data);
+            // })
+            location.reload();
         }).catch(err => {
             console.error(err)
             alert('エラー')

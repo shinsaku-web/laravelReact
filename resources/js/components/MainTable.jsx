@@ -13,13 +13,11 @@ const headerList = ['名前', 'タスク内容', '編集', '完了'];
 
 // 完了処理
 const destroy = (id) => {
-    axios.post('/api/tasks/delete', {
-        id: id
-    }).then(res => {
+    axios.delete('/api/tasks/' + id).then(res => {
         console.log(res);
     }).catch(err => {
         console.error(err)
-        // alert('エラー')
+        alert('エラー')
     })
 }
 

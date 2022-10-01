@@ -2,9 +2,23 @@ import { useEffect, useState } from "react"
 import { Box, Button, Container, TextField } from '@mui/material';
 import { useParams } from "react-router-dom";
 
+
 export const Update = () => {
     const { id } = useParams();
     const [data, setData] = useState(null);
+    // 更新処理
+    const handleUpdate = () => {
+        axios.put('/api/tasks/' + id, {
+            id: id,
+            name: "更新用",
+            content: "更新用content"
+        }).then(res => {
+            console.log(res);
+        }).catch(err => {
+            console.error(err)
+            alert('エラー')
+        })
+    }
     useEffect(() => {
         axios.get("/api/tasks/edit/" + id).then((res) => {
             const data = res.data
@@ -47,7 +61,7 @@ export const Update = () => {
                             />
                             <br />
                             <br />
-                            <Button variant="contained">編集！</Button>
+                            <Button variant="contained" onClick={handleUpdate}>編集！</Button>
                         </form>
                     </Box>
                 </Container>

@@ -79,7 +79,10 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Task::where('id', $request->id)->update([
+            'name' => $request->name,
+            'content' => $request->content,
+        ]);
     }
 
     /**

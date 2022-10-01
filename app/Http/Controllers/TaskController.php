@@ -36,6 +36,10 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'content' => 'required',
+        ]);
         Task::create([
             "name" => $request->name,
             "content" => $request->content,
@@ -85,6 +89,7 @@ class TaskController extends Controller
      */
     public function delete(Request $request)
     {
-        Task::find($request->id)->delete();
+        return json_encode($request);
+        // Task::find($request->id)->delete();
     }
 }
